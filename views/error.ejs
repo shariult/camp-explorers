@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<header class="header" id="home">
+  <div class="header__content">
+    <h1 class="heading-1">
+      Error: <%= err.status %>
+      <span class="heading-1--sub"><%= err.message %></span>
+    </h1>
+    <a class="btn btn--primary my-2" href="/#campgrounds">View Campground</a>
+  </div>
+  <img class="header__img" src="/img/hero.png" alt="hero image" />
+</header>
+<%- include('partials/footer') %>

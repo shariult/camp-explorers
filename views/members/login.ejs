@@ -1,0 +1,32 @@
+<%- include('../partials/header'); %>
+<section class="section-register">
+  <div class="form-wrapper">
+    <h2 class="heading-2 mb-4">Login</h2>
+    <form action="/login" method="post" class="form">
+      <div class="form__box">
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="username"
+            class="form__input"
+            id="username"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="form__box--h">
+          <input
+            type="password"
+            name="password"
+            class="form__input"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+      </div>
+      <button class="btn btn--primary form__btn">Login</button>
+    </form>
+  </div>
+</section>
+<%- include('../partials/footer'); %>

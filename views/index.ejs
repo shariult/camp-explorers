@@ -1,0 +1,94 @@
+<%- include('partials/header'); -%>
+<header class="header" id="home">
+  <div class="header__content">
+    <h1 class="heading-1">
+      Camp Explorers
+      <span class="heading-1--sub"
+        >Share your adventure in the calm and peaceful nature</span
+      >
+    </h1>
+    <a class="btn btn--primary my-2" href="/#campgrounds">View Campground</a>
+  </div>
+  <img class="header__img" src="/img/hero.png" alt="hero image" />
+</header>
+<section class="section-about" id="about">
+  <h2 class="heading-2 my-2">Share your camping journey</h2>
+  <div class="about-content">
+    <div class="about-content__text">
+      <p class="about-content__paragraph">
+        Life is best enjoyed outside in the nature. As we all go out to explore
+        nature we gain lots of beautiful experiences. It relieves us of our
+        daily stress and monotony.However, these experiences remains to ourself.
+        <br />
+        Sharing these experiences will give the explorer inspiration to explore
+        more, find out nature's hidden treasure, relieving daily day hassles.
+        Also it will motivate others to explore. <br />
+        Some may not know which place to go for camping or the camping
+        instruments required. Some camping requires cash, some should be visited
+        at a specific season etc. To make your camping life more easier this
+        website is build.
+      </p>
+      <a href="/campgrounds/new" class="btn btn--primary about-content__btn"
+        >Add your experiences</a
+      >
+    </div>
+    <div class="gallery">
+      <div class="gallery__small">
+        <img
+          src="/img/camping1.jpg"
+          alt="camping image 1"
+          class="gallery__img"
+        />
+        <img
+          src="/img/camping2.jpg"
+          alt="camping image 2"
+          class="gallery__img"
+        />
+      </div>
+      <div class="gallery__big">
+        <img
+          src="/img/camping3.jpg"
+          alt="camping image 3"
+          class="gallery__img"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-campgrounds" id="campgrounds">
+  <h2 class="heading-2 my-2">All Campgrounds</h2>
+  <a href="/campgrounds/new" class="btn btn--primary section-campgrounds__btn"
+    >Add New campground</a
+  >
+  <div class="cards">
+    <% Campgrounds.forEach((campground)=>{ %>
+    <div class="card">
+      <img
+        src="<%= campground.imgURL %>"
+        alt="campground image"
+        class="card__img"
+      />
+      <h3 class="heading-3 card__heading my-2"><%= campground.title %></h3>
+      <div class="card__box">
+        <p class="card__detail">
+          <span class="text--bold">Location:</span> <%= campground.location %>
+        </p>
+        <p class="card__detail">
+          <span class="text--bold">Price:</span> <%= campground.cost %>
+        </p>
+        <p class="card__detail">
+          <span class="text--bold">Rating:</span> 5 out of 5
+        </p>
+      </div>
+      <p class="card__description">
+        <span class="text--bold">Description:</span> <%=
+        campground.description.substr(0, 90)+ "..............." %>
+      </p>
+      <a href="/campgrounds/<%= campground.id %>" class="btn card__btn"
+        >View Details</a
+      >
+    </div>
+    <% }); %>
+  </div>
+</section>
+<%- include('partials/footer'); -%>

@@ -1,0 +1,36 @@
+{
+  "name": "camp-explorers",
+  "version": "1.0.0",
+  "description": "Website for storing and sharing Camp locations all around the world.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "NODE_ENV=dev nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shariult/camp-explorers.git"
+  },
+  "author": "Md. Shariul Islam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shariult/camp-explorers/issues"
+  },
+  "homepage": "https://github.com/shariult/camp-explorers#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

@@ -1,0 +1,89 @@
+<%- include('../partials/header'); %>
+<section class="section-register">
+  <div class="form-wrapper">
+    <h2 class="heading-2 mb-4">Register</h2>
+    <form action="/register" method="post" class="form">
+      <div class="form__box">
+        <input
+          type="text"
+          name="fullname"
+          class="form__input form__input--f"
+          id="fullname"
+          placeholder="Full Name"
+          required
+        />
+      </div>
+      <div class="form__box">
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="username"
+            class="form__input"
+            id="username"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="form__box--h">
+          <input
+            type="password"
+            name="password"
+            class="form__input"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+      </div>
+      <div class="form__box">
+        <div class="form__box--h">
+          <input
+            type="email"
+            name="email"
+            class="form__input"
+            id="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="contact"
+            class="form__input"
+            id="contact"
+            placeholder="Contact"
+          />
+        </div>
+      </div>
+      <div class="form__box">
+        <div class="form__box--h">
+          <input
+            type="date"
+            name="dateOfBirth"
+            class="form__input"
+            id="dateOfBirth"
+            placeholder="dateOfBirth"
+          />
+        </div>
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="country"
+            class="form__input"
+            id="country"
+            placeholder="Country"
+            required
+          />
+        </div>
+      </div>
+      <textarea
+        name="about"
+        class="form__textarea"
+        placeholder="About You"
+      ></textarea>
+      <button class="btn btn--primary form__btn">Register</button>
+    </form>
+  </div>
+</section>
+<%- include('../partials/footer'); %>

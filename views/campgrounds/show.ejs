@@ -1,0 +1,111 @@
+<%- include('../partials/header'); %>
+<section class="section-campground">
+  <h1 class="heading-2"><%= campground.title %></h1>
+  <div class="campground">
+    <div class="campground__nav">
+      <p><span class="text--bold">Rating:</span> 4 out of 5</p>
+      <p>
+        <span class="text--bold">Date Created:</span> <%=
+        campground.created.toDateString() %>
+      </p>
+    </div>
+    <div class="campground__box">
+      <div class="campground__left">
+        <img
+          src="<%= campground.imgURL %>"
+          alt="image of campground"
+          class="campground__img"
+        />
+        <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+        <a
+          href="/campgrounds/<%= campground.id %>/edit"
+          class="btn btn--primary campground__btn"
+          >Edit</a
+        >
+        <form
+          action="/campgrounds/<%= campground.id %>?_method=DELETE"
+          method="POST"
+        >
+          <button class="btn btn--primary campground__btn">Delete</button>
+        </form>
+        <%}%>
+      </div>
+      <ul class="campground__list">
+        <li class="campground__item">
+          <span class="campground__item--bold">Location:</span><%=
+          campground.location %>
+        </li>
+        <li class="campground__item">
+          <span class="campground__item--bold">Price:</span>
+          <% if(campground.cost){ %> <%= "Free" %> <%}else{%> <%=
+          campground.cost %> <%} %>
+        </li>
+        <li class="campground__item">
+          <span class="campground__item--bold">Website:</span><%=
+          campground.website %>
+        </li>
+        <li class="campground__item">
+          <span class="campground__item--bold">Contact:</span><%=
+          campground.contact %>
+        </li>
+        <li class="campground__item">
+          <span class="campground__item--bold">Essentials:</span><%=
+          campground.essentials %>
+        </li>
+      </ul>
+    </div>
+    <div class="campground-description">
+      <h3 class="heading-3 campground-description__title">Description:</h3>
+      <p class="campground-description__text">
+        <%= campground.description %>
+      </p>
+    </div>
+  </div>
+</section>
+<section class="section-comments">
+  <h2 class="heading-3 section-comments__title">Review</h2>
+  <div class="form-wrapper">
+    <form
+      action="/campgrounds/<%= campground._id %>/comments"
+      method="post"
+      class="form"
+    >
+      <div class="form__box">
+        <input
+          type="text"
+          name="comment"
+          class="form__input section-comments__input"
+          id="comment"
+          placeholder="Add Review"
+          required
+        />
+      </div>
+      <button class="btn btn--primary form__btn">Add Review</button>
+    </form>
+    <div class="comment">
+      <% campground.comments.forEach((comment)=>{ %>
+      <div class="comment__box">
+        <blockquote class="comment__comment">
+          <%= comment.comment %>
+        </blockquote>
+        <p class="comment__author"><%= comment.author.username %></p>
+        <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
+        <a
+          href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit"
+          class="btn btn--primary comment__btn"
+          >Edit</a
+        >
+        <form
+          action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE"
+          method="post"
+          class="dib"
+        >
+          <button class="btn btn--primary comment__btn">Delete</button>
+        </form>
+        <% } %>
+      </div>
+      <%}); %>
+    </div>
+  </div>
+</section>
+<%- include('../partials/header'); %>

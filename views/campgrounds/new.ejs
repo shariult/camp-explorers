@@ -1,0 +1,89 @@
+<%- include('../partials/header'); %>
+<section class="section-newcamp">
+  <div class="form-wrapper">
+    <h2 class="heading-2 mb-4">Add New Campground</h2>
+    <form action="/campgrounds" method="post" class="form">
+      <div class="form__box">
+        <input
+          type="text"
+          name="campground[title]"
+          class="form__input form__input--f"
+          id="campgroundName"
+          placeholder="Name"
+          required
+        />
+      </div>
+      <div class="form__box">
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="campground[imgURL]"
+            class="form__input"
+            id="campgroundImage"
+            placeholder="Image URL"
+            required
+          />
+        </div>
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="campground[location]"
+            class="form__input"
+            id="campgroundLocation"
+            placeholder="Location"
+            required
+          />
+        </div>
+      </div>
+      <div class="form__box">
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="campground[contact]"
+            class="form__input"
+            id="campgroundEmail"
+            placeholder="Contact"
+            required
+          />
+        </div>
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="campground[website]"
+            class="form__input"
+            id="campgroundWeb"
+            placeholder="Website"
+          />
+        </div>
+      </div>
+      <div class="form__box">
+        <div class="form__box--h">
+          <input
+            type="number"
+            name="campground[cost]"
+            class="form__input"
+            id="campgroundPrice"
+            placeholder="Cost"
+          />
+        </div>
+        <div class="form__box--h">
+          <input
+            type="text"
+            name="campground[essentials]"
+            class="form__input"
+            id="campgroundEssentials"
+            placeholder="Essential Equipments"
+            required
+          />
+        </div>
+      </div>
+      <textarea
+        name="campground[description]"
+        class="form__textarea"
+        placeholder="Description"
+      ></textarea>
+      <button class="btn btn--primary form__btn">Add Campground</button>
+    </form>
+  </div>
+</section>
+<%- include('../partials/footer'); %>
